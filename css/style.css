@@ -1,0 +1,491 @@
+/*formatar estilo padrão geral*/
+/*
+*{
+  text-align: justify;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+
+}
+
+
+#bg-light {
+  margin: 0;
+  font-family: 'Georgia', serif;  
+  }
+
+
+#image_icon{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.highlight-card {
+  background-color: #dbe7c9;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 0 20px 20px;
+}
+
+.highlight-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.plant-info h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.plant-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.mostrar_mais  {
+  font-size: 14px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 5px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px 20px;
+}
+
+.small-card {
+  background-color: #dbe7c9;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.small-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  align-content: flex-start;
+}
+
+
+.card-menores{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-menor{
+  width: 400px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.card-menor img{
+  width: 100px;
+  flex: 0.8;
+  border-radius: 10px;
+}
+
+.card-menor .info-card{
+  flex: 1;
+}
+
+.card-menor .btn-card{
+  font-size: 14px;
+  color: #333;
+  background-color: #dbe7c9;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 8px;
+}
+
+.card-menor .btn-card:hover{
+  background-color: #c4d3a4;
+}
+
+
+.btn-sobre{
+  background-color:#2f4f2f;
+  color: white;
+}*/
+
+
+/** 
+ * ==========================
+ * ESTILO GERAL / PADRÕES
+ * ==========================
+ */
+
+/* Zera margens padrão e aplica estilo base */
+* {
+  box-sizing: border-box; /** garante que padding e borda não aumentem o tamanho total do elemento **/
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Fundo mais suave e fonte clássica para contraste */
+#bg-light {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f8f9f6; /** cor leve e neutra **/
+  color: #333;
+}
+
+/* Ícones (como folhas, lupa, etc.) */
+#image_icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+
+/** 
+ * ==========================
+ * CABEÇALHO E NAVEGAÇÃO
+ * ==========================
+ */
+header h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #2f4f2f;
+  margin: 10px 0;
+}
+
+nav {
+  background-color: #2f4f2f;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 10px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #dbe7c9; /** leve realce ao passar o mouse **/
+}
+
+
+/** 
+ * ==========================
+ * TÍTULOS E DESTAQUES
+ * ==========================
+ */
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0;
+  color: #2f4f2f;
+}
+
+/* Card de destaque (planta principal ou recomendada) */
+.highlight-card {
+  background-color: #dbe7c9;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 0 20px 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.highlight-card:hover {
+  transform: scale(1.02); /** leve zoom ao passar o mouse **/
+}
+
+.highlight-card img {
+  width: 120px; /** imagem levemente maior para destaque **/
+  height: 120px;
+  object-fit: cover; /** impede distorção da imagem **/
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+/* Informações da planta principal */
+.plant-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1e392a;
+}
+
+.plant-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Botão “Mostrar mais” */
+.mostrar_mais {
+  font-size: 0.9rem;
+  color: #2f4f2f;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.mostrar_mais:hover {
+  color: #1e392a;
+}
+
+
+/** 
+ * ==========================
+ * GRADE DE CARDS (LISTA DE PLANTAS)
+ * ==========================
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /** ajusta automaticamente conforme tela **/
+  gap: 15px;
+  padding: 15px 20px;
+}
+
+/* Card menor para cada planta */
+.small-card {
+  background-color: #dbe7c9;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.small-card:hover {
+  transform: scale(1.03);
+}
+
+/* Imagens dos cards menores */
+.small-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /** mantém proporção correta **/
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/** 
+ * ==========================
+ * CARDS MENORES (para seção “mostrar mais”)
+ * ==========================
+ */
+.card-menores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card-menor {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card-menor:hover {
+  transform: translateY(-3px);
+}
+
+.card-menor img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.card-menor .info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botão de ação nos cards */
+.card-menor .btn-card {
+  font-size: 0.9rem;
+  color: #333;
+  background-color: #dbe7c9;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 6px 15px;
+  border-radius: 8px;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.card-menor .btn-card:hover {
+  background-color: #c4d3a4;
+}
+
+/* Botão especial tipo "sobre" */
+.btn-sobre {
+  background-color: #2f4f2f;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn-sobre:hover {
+  background-color: #244224;
+}
+
+
+/** 
+ * ==========================
+ * RESPONSIVIDADE
+ * ==========================
+ */
+
+/* Tablets (média tela) */
+@media (max-width: 992px) {
+  .highlight-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight-card img {
+    margin: 0 0 10px 0;
+  }
+
+  .card-menor {
+    max-width: 350px;
+  }
+}
+
+/* Smartphones (tela pequena) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-menor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-menor img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  .card-menor .btn-card {
+    align-self: center;
+  }
+}
+/* Fim do arquivo style.css */
+
+
+
+
+
+/* Estilo do alerta de termos de responsabilidade */
+.termos-alerta {
+  position: fixed;
+  bottom: 0;                /* Fixa no rodapé */
+  left: 0;
+  width: 100%;              /* Ocupa toda a largura */
+  background-color: #f8f9fa;
+  border-top: 2px solid #2f4f2f;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 1050;            /* Fica acima de todos os elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+/* Conteúdo interno */
+.termos-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.termos-conteudo p {
+  margin: 0;
+}
+
+.botoes-termo {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .termos-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

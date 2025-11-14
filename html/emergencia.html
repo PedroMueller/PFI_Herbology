@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Emergência - Herbology</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- mesmo CSS do site -->
+  <link rel="icon" href="/svg/3.svg">
+</head>
+
+<body>
+  <main id="acesso">
+    <h1>Acesso Restrito</h1>
+    <p>Digite a senha de administrador para acessar esse painel.</p>
+    <input type="password" id="senha" placeholder="Senha de administrador">
+    <button id="entrar">Entrar</button>
+    <p id="erro" style="color: red; display: none;">Senha incorreta!</p>
+  </main>
+
+  <main id="painel" style="display: none;">
+    <h1>Painel do Adiministrador - Herbology</h1>
+    <p>Gerencie os registros de plantas diretamente no banco de dados.</p>
+
+    <!-- Seção Adicionar -->
+    <section class="card">
+      <h2>Adicionar Planta</h2>
+      <form id="formAdd">
+        <input type="text" name="nome_popular" placeholder="Nome popular" required>
+        <input type="text" name="nome_cientifico" placeholder="Nome científico" required>
+        <textarea name="descricao" placeholder="Descrição"></textarea>
+        <input type="url" name="imagem_url" placeholder="URL da imagem">
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Seção Editar -->
+    <section class="card">
+      <h2>Editar Planta</h2>
+      <select id="selectEditar"></select>
+      <form id="formEdit">
+        <input type="text" name="nome_popular" placeholder="Nome popular">
+        <input type="text" name="nome_cientifico" placeholder="Nome científico">
+        <textarea name="descricao" placeholder="Descrição"></textarea>
+        <input type="url" name="imagem_url" placeholder="URL da imagem">
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </section>
+
+    <!-- Seção Remover -->
+    <section class="card">
+      <h2>Remover Planta</h2>
+      <select id="selectRemover"></select>
+      <button id="btnRemover">Remover Selecionada</button>
+    </section>
+
+    <div id="mensagem"></div>
+  </main>
+
+  <script src="/js/emergencia.js"></script>
+</body>
+</html>

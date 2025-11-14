@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Pesquisa - Herbology</title>
+  <link rel="icon" href="/svg/3.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../js/jquery_principal.js"></script>
+  <script src="../js/jquery_busca.js"></script>
+  <script src="../js/script.js"></script>
+
+
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2f4f2f; ">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="/svg/4.svg" alt="Logo" width="30" height="30" class="me-2">
+          <span>Herbology</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"> 
+              <a onclick="trocarPaginaInicio()" class="nav-link active" href="#"><img id="image_icon" src="/imgs/icone_casa.png" alt="Início"> Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img id="image_icon" src="/imgs/icone_pesquisa.png" alt="Pesquisa"> Pesquisa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container-fluid my-4">
+    <div class="row">
+
+      <!-- Barra lateral de filtros -->
+      <aside class="col-md-2 mb-4">
+        <h4>Filtros</h4>
+        <ul class="list-unstyled">
+          <li class="mb-2"><input type="checkbox" id="f1"> <label for="f1">Exemplo</label></li>
+          <li class="mb-2"><input type="checkbox" id="f2"> <label for="f2">Exemplo</label></li>
+          <li class="mb-2"><input type="checkbox" id="f3"> <label for="f3">Exemplo</label></li>
+          <li class="mb-2"><input type="checkbox" id="f4"> <label for="f4">Exemplo</label></li>
+          <li class="mb-2"><input type="checkbox" id="f5"> <label for="f5">Exemplo</label></li>
+          <li class="mb-2"><input type="checkbox" id="f6"> <label for="f6">Exemplo</label></li>
+        </ul>
+      </aside>
+
+      <!-- Área de pesquisa e resultados -->
+      <section class="col-md-10">
+        <!-- Campo de pesquisa -->
+        <div class="mb-4 d-flex">
+          <input type="text" id="pesquisaPlanta"  class="form-control me-3" placeholder="Digite o nome da planta...">
+          <button class="btn btn-primary" onclick="clickBusca()" style=" background-color: #2f4f2f">Pesquisar</button>
+        </div>
+
+        <!---Resultado da pesquisa-->
+        <section class="card-menores">
+          <h5>Todos os resultados da pesquisa vão aparecer aqui</h5>
+        </section>
+
+        
+      </section>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="text-center text-white py-3 mt-5" style="background-color:#2f4f2f;">
+    <button class="btn-sobre" onclick=" trocarPaginaSobre()"> Sobre o app</button>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
