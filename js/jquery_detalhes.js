@@ -35,13 +35,13 @@ $(document).ready(function () {
 
     // Nome científico
     $("main h4").html(`
-      <img src="/imgs/icone_folha.png" alt="Ícone folha" width="20" class="me-2">
+      <img src="../imgs/icone_folha.png" alt="Ícone folha" width="20" class="me-2">
       ${planta.nome_popular} — <span class="text-muted">${planta.nome_cientifico}</span>
     `);
 
     // Descrição
     $("main p.mt-3").html(`
-      <img src="/imgs/icone_info.png" alt="Ícone info" width="18" class="me-2">
+      <img src="../imgs/icone_info.png" alt="Ícone info" width="18" class="me-2">
       ${planta.descricao}
     `);
 
