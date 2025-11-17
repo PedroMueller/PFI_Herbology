@@ -92,24 +92,24 @@ function trocarPaginaPlanta(id) {
 // ===============================
     // Função: buscar plantas na API
     // ===============================
-    function buscarPlantas(termo) {
-        var url = `http://127.0.0.1:5000/busca_planta?termo=${termo}`;
+function buscarPlantas(termo) {
+    var url = `http://127.0.0.1:5000/busca_planta?termo=${termo}`;
 
-        // Atualiza o link na barra de endereços
-        window.history.replaceState({}, '', `?termo=${termo}`);
+    // Atualiza o link na barra de endereços
+    window.history.replaceState({}, '', `?termo=${termo}`);
 
-        $.get(url, function (data) {
-            console.log("Resposta da API:", data); // para debug
-            if (data.status === "ok") {
-                console.log("Passou no IF status ok");
-                console.log(data.data);
-                plantas = data.data; // atualiza o array de plantas
-                renderizarResultados(data.data);
-            } else {
-                console.log("Erro retornado pela API: ESLE", data.message);
-                targetSection.html(`<p class="text-danger">Erro: ${data.message}</p>`);
-            }
-        }).fail(function () {
-            targetSection.html('<p class="text-danger">Erro ao conectar à API.</p>');
-        });
-    }
+    $.get(url, function (data) {
+        console.log("Resposta da API:", data); // para debug
+        if (data.status === "ok") {
+            console.log("Passou no IF status ok");
+            console.log(data.data);
+            plantas = data.data; // atualiza o array de plantas
+            renderizarResultados(data.data);
+        } else {
+            console.log("Erro retornado pela API: ESLE", data.message);
+            targetSection.html(`<p class="text-danger">Erro: ${data.message}</p>`);
+        }
+    }).fail(function () {
+        targetSection.html('<p class="text-danger">Erro ao conectar à API.</p>');
+    });
+}

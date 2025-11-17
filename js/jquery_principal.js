@@ -64,14 +64,3 @@ $(document).ready(function () {
     function trocarPaginaPlanta(id) {
         window.location.href = `tela_planta.html?id=${id}`;
     }
-
-    
-    // ===============================
-
-    // FAZER UM JS QUE VAI CARREGAR OS DADOS DA PLANTA NA PÁGINA DE DETALHES
-    //PARA CARREGAR OS DETALHES DA PLANTA TEM QUE PERGA O ID DA URL E BUSCAR OS DADOS EM UMA NOOOOOOOVVVVVVVVAAA API (/DETALHES?id=1)
-    // no python fazer um /datelhes que vai na base de dados e faz as parad tudo
-
-
-
-

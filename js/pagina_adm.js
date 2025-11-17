@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const senhaCorreta = "admin2025"; // pode ser movida para o backend
+  const senhaCorreta = "123"; // pode ser movida para o backend
   const acesso = document.getElementById("acesso");
   const painel = document.getElementById("painel");
   const erro = document.getElementById("erro");

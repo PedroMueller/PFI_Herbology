@@ -6,6 +6,7 @@
   <title>Painel de Administração - Herbology</title>
   <link rel="stylesheet" href="../css/tela_adm.css"> <!-- mesmo CSS do site -->
   <link rel="icon" href="../svg/3.svg">
+  <script src="../js/jquery_adm.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <h1>Acesso Restrito</h1>
     <p>Digite a senha de administrador para acessar esse painel.</p>
     <input type="password" id="senha" placeholder="Senha de administrador">
-    <button id="entrar">Entrar</button>
+    <button id="entrar" onclick="EntrarAdm()">Entrar</button>
     <p id="erro" style="color: red; display: none;">Senha incorreta!</p>
   </main>
 
@@ -26,7 +27,7 @@
 
       <!-- Botão adicionar -->
       <div class="add-container">
-          <button class="btn-add">Adicionar Planta</button>
+          <button class="btn-add" onclick = "AdicionarPlanta()">Adicionar Planta</button>
       </div>
 
       <!-- Tabela com os campos do banco -->
@@ -37,12 +38,13 @@
                   <th>Nome Popular</th>
                   <th>Nome Científico</th>
                   <th>Descrição</th>
-                  <th>imagem_url</th>
+                  <th>Imagem</th>
+                  <th>Link Imagem</th>
                   <th>Ações</th>
               </tr>
           </thead>
 
-          <tbody>
+          <tbody id= "targetTabela">
               <!-- Exemplo (será dinâmico no futuro) -->
               <tr>
                   <td>1</td>
@@ -50,8 +52,9 @@
                   <td>Nome científico</td>
                   <td>Descrição curta sobre a planta.</td>
                   <td>
-                      <img src="" alt="imagem" class="img-plant">
+                      <img src="../imgs/margarida_teste.png" alt="imagem" class="img-plant">
                   </td>
+                  <td>../imgs/margarida_teste.png</td>
                   <td class="actions">
                       <button class="btn-edit">✏️ Editar</button>
                       <button class="btn-remove">🗑️ Remover</button>
@@ -72,6 +75,6 @@
   </div>
 
 
-  <script src="../js/pagina_adm.js"></script>
+  <!-- <script src="../js/pagina_adm.js"></script> -->
 </body>
 </html>
