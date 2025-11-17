@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel de Administração - Herbology</title>
-  <link rel="stylesheet" href="../css/style.css"> <!-- mesmo CSS do site -->
+  <link rel="stylesheet" href="../css/tela_adm.css"> <!-- mesmo CSS do site -->
   <link rel="icon" href="../svg/3.svg">
 </head>
 
@@ -21,40 +21,56 @@
     <h1>Painel do Adiministrador - Herbology</h1>
     <p>Gerencie os registros de plantas diretamente no banco de dados.</p>
 
-    <!-- Seção Adicionar -->
-    <section class="card">
-      <h2>Adicionar Planta</h2>
-      <form id="formAdd">
-        <input type="text" name="nome_popular" placeholder="Nome popular" required>
-        <input type="text" name="nome_cientifico" placeholder="Nome científico" required>
-        <textarea name="descricao" placeholder="Descrição"></textarea>
-        <input type="url" name="imagem_url" placeholder="URL da imagem">
-        <button type="submit">Adicionar</button>
-      </form>
-    </section>
+      <!-- Seção Adicionar -->
+  <div class="admin-container">
 
-    <!-- Seção Editar -->
-    <section class="card">
-      <h2>Editar Planta</h2>
-      <select id="selectEditar"></select>
-      <form id="formEdit">
-        <input type="text" name="nome_popular" placeholder="Nome popular">
-        <input type="text" name="nome_cientifico" placeholder="Nome científico">
-        <textarea name="descricao" placeholder="Descrição"></textarea>
-        <input type="url" name="imagem_url" placeholder="URL da imagem">
-        <button type="submit">Salvar Alterações</button>
-      </form>
-    </section>
+      <!-- Botão adicionar -->
+      <div class="add-container">
+          <button class="btn-add">Adicionar Planta</button>
+      </div>
 
-    <!-- Seção Remover -->
-    <section class="card">
-      <h2>Remover Planta</h2>
-      <select id="selectRemover"></select>
-      <button id="btnRemover">Remover Selecionada</button>
-    </section>
+      <!-- Tabela com os campos do banco -->
+      <table class="admin-table">
+          <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Nome Popular</th>
+                  <th>Nome Científico</th>
+                  <th>Descrição</th>
+                  <th>imagem_url</th>
+                  <th>Ações</th>
+              </tr>
+          </thead>
 
-    <div id="mensagem"></div>
-  </main>
+          <tbody>
+              <!-- Exemplo (será dinâmico no futuro) -->
+              <tr>
+                  <td>1</td>
+                  <td>Texto Exemplo</td>
+                  <td>Nome científico</td>
+                  <td>Descrição curta sobre a planta.</td>
+                  <td>
+                      <img src="" alt="imagem" class="img-plant">
+                  </td>
+                  <td class="actions">
+                      <button class="btn-edit">✏️ Editar</button>
+                      <button class="btn-remove">🗑️ Remover</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+      <!-- Paginação -->
+      <div class="pagination">
+          <button disabled>&laquo;</button>
+          <button disabled>&lsaquo;</button>
+          <span class="page-number">1</span>
+          <button>&rsaquo;</button>
+          <button>&raquo;</button>
+      </div>
+
+  </div>
+
 
   <script src="../js/pagina_adm.js"></script>
 </body>
