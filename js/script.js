@@ -23,3 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     alerta.style.display = "none"; // Oculta o alerta
   });
 });
+
+function ConfirmarTermo() {
+    const botaoConfirmar = document.querySelector(".modal-footer .btn");
+    botaoConfirmar.disabled = false;
+    window.location.href = "index.html";
+}

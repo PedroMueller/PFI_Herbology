@@ -14,13 +14,15 @@ function carregarPlantas() {
 
     $.get("http://127.0.0.1:5000/plantas", function (data) {
 
-        var targetTabela = $('targetTabela')
-        console.log
+        var targetTabela = $('#targetTabela')
+        
+        console.log("ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",targetTabela)
 
         var items = data.data; // supondo que o retorno seja uma lista de objetos
 
         // Limpa tabela já existentes (se necessário)
         targetTabela.empty();
+        $("#targetTabela").append("<span>New content at the end</span>");
 
         console.log("Carregando plantas na tabela administrativa", items);
 
@@ -44,6 +46,7 @@ function carregarPlantas() {
                     </tr>
                     `;
             targetTabela.append(elementoTabela);
+            console.log(targetTabela)
         });
 
     });
@@ -60,7 +63,10 @@ function EntrarAdm() {
     if (senha === senhaCorreta) {
         acesso.style.display = "none";
         painel.style.display = "block";
+        console.log("Carregando plantas para o administrador.");
+
         carregarPlantas();
+        console.log("Acesso concedido ao painel administrativo.");
     } else {
         erro.style.display = "block";
     }
@@ -108,7 +114,7 @@ function AdicionarPlanta() {
         };
 
         // Envio ao backend
-        fetch("http://127.0.0.1:5000/plantas/add", {
+        fetch("http://127.0.0.1:5000/plantas/adm/add", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dados)
@@ -133,7 +139,7 @@ function EditarPlanta(id) {
     }
 
     // Primeiro, buscar dados atuais
-    fetch(`http://127.0.0.1:5000/plantas/${id}`)
+    fetch(`http://127.0.0.1:5000/plantas/adm/update/${id}`)
         .then(r => r.json())
         .then(planta => {
 
@@ -170,7 +176,7 @@ function EditarPlanta(id) {
                     imagem_url: $("#edit_imagem_url").val()
                 };
 
-                fetch(`http://127.0.0.1:5000/plantas/update/${id}`, {
+                fetch(`http://127.0.0.1:5000/plantas/adm/update/${id}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(dadosEdit)
@@ -199,7 +205,7 @@ function RemoverPlanta(id) {
         return;
     }
 
-    fetch(`http://127.0.0.1:5000/plantas/delete/${id}`, {
+    fetch(`http://127.0.0.1:5000//plantas/adm/delete/${id}`, {
         method: "DELETE"
     })
     .then(r => r.json())

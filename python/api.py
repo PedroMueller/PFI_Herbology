@@ -96,5 +96,52 @@ if __name__ == '__main__':
 
 
 # =============================
-# CATEGORIAS
+# ADMIN
 # =============================
+@app.route('/plantas/adm/add', methods=['POST'])
+def add_planta():
+    try:
+        data = request.json
+
+        nome_popular = data.get("nome_popular")
+        nome_cientifico = data.get("nome_cientifico")
+        descricao = data.get("descricao")
+        imagem_url = data.get("imagem_url")
+
+        ctrl.add_planta(nome_popular, nome_cientifico, descricao, imagem_url)
+
+        return jsonify({"status": "success", "message": "Planta adicionada com sucesso!"}), 201
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+
+@app.route('/plantas/adm/update/<int:planta_id>', methods=['PUT'])
+def update_planta(planta_id):
+    try:
+        data = request.json
+
+        # Envia apenas campos modificados
+        campos = {
+            "nome_popular": data.get("nome_popular"),
+            "nome_cientifico": data.get("nome_cientifico"),
+            "descricao": data.get("descricao"),
+            "imagem_url": data.get("imagem_url")
+        }
+
+        ctrl.update_planta(planta_id, campos)
+        print(campos, planta_id)
+
+        return jsonify({"status": "success", "message": "Planta atualizada com sucesso!"})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+
+@app.route('/plantas/adm/delete/<int:planta_id>', methods=['DELETE'])
+def delete_planta(planta_id):
+    try:
+        ctrl.delete_planta(planta_id)
+        print("ID para deletar a planta",planta_id)
+        return jsonify({"status": "success", "message": "Planta removida!"})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
