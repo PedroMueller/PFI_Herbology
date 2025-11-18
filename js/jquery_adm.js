@@ -66,3 +66,151 @@ function EntrarAdm() {
     }
 }
 
+function AdicionarPlanta() {
+
+    if (!confirm("Deseja adicionar uma nova planta?")) {
+        return;
+    }
+
+    // Remove qualquer formulário anterior
+    $("#form-dinamico").remove();
+
+    // Cria formulário dinâmico
+    var form =
+        `<div id="form-dinamico" class="form-popup">
+            <h3>Adicionar Nova Planta</h3>
+
+            <label>Nome Popular:</label>
+            <input type="text" id="add_nome_popular">
+
+            <label>Nome Científico:</label>
+            <input type="text" id="add_nome_cientifico">
+
+            <label>Descrição:</label>
+            <textarea id="add_descricao"></textarea>
+
+            <label>URL da Imagem:</label>
+            <input type="text" id="add_imagem_url">
+
+            <button id="btnSalvarAdd">Salvar</button>
+        </div>`;
+
+    $("#painel").append(form);
+
+    // Evento salvar
+    $("#btnSalvarAdd").on("click", function () {
+
+        const dados = {
+            nome_popular: $("#add_nome_popular").val(),
+            nome_cientifico: $("#add_nome_cientifico").val(),
+            descricao: $("#add_descricao").val(),
+            imagem_url: $("#add_imagem_url").val()
+        };
+
+        // Envio ao backend
+        fetch("http://127.0.0.1:5000/plantas/add", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        })
+        .then(r => r.json())
+        .then(resp => {
+            if (resp.status === "success") {
+                alert("Planta adicionada com sucesso!");
+                $("#form-dinamico").remove();
+                carregarPlantas();
+            } else {
+                alert("Erro ao adicionar planta.");
+            }
+        })
+        .catch(() => alert("Erro de comunicação com o servidor."));
+    });
+}
+function EditarPlanta(id) {
+
+    if (!confirm(`Deseja editar a planta de ID ${id}?`)) {
+        return;
+    }
+
+    // Primeiro, buscar dados atuais
+    fetch(`http://127.0.0.1:5000/plantas/${id}`)
+        .then(r => r.json())
+        .then(planta => {
+
+            $("#form-dinamico").remove();
+
+            var form =
+                `<div id="form-dinamico" class="form-popup">
+                    <h3>Editar Planta (ID ${id})</h3>
+
+                    <label>Nome Popular:</label>
+                    <input type="text" id="edit_nome_popular" value="${planta.nome_popular}">
+
+                    <label>Nome Científico:</label>
+                    <input type="text" id="edit_nome_cientifico" value="${planta.nome_cientifico}">
+
+                    <label>Descrição:</label>
+                    <textarea id="edit_descricao">${planta.descricao}</textarea>
+
+                    <label>URL da Imagem:</label>
+                    <input type="text" id="edit_imagem_url" value="${planta.imagem_url}">
+
+                    <button id="btnSalvarEdit">Salvar alterações</button>
+                </div>`;
+
+            $("#painel").append(form);
+
+            // Botão salvar
+            $("#btnSalvarEdit").on("click", function () {
+
+                const dadosEdit = {
+                    nome_popular: $("#edit_nome_popular").val(),
+                    nome_cientifico: $("#edit_nome_cientifico").val(),
+                    descricao: $("#edit_descricao").val(),
+                    imagem_url: $("#edit_imagem_url").val()
+                };
+
+                fetch(`http://127.0.0.1:5000/plantas/update/${id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dadosEdit)
+                })
+                .then(r => r.json())
+                .then(resp => {
+                    if (resp.status === "success") {
+                        alert("Planta atualizada!");
+                        $("#form-dinamico").remove();
+                        carregarPlantas();
+                    } else {
+                        alert("Erro ao atualizar planta.");
+                    }
+                })
+                .catch(() => alert("Erro de comunicação com o servidor."));
+            });
+
+        });
+}
+
+
+function RemoverPlanta(id) {
+
+    if (!confirm(`Tem certeza que deseja remover a planta ID ${id}?`)) {
+        
+        return;
+    }
+
+    fetch(`http://127.0.0.1:5000/plantas/delete/${id}`, {
+        method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(resp => {
+
+        if (resp.status === "success") {
+            alert("Planta removida.");
+            carregarPlantas(); // atualiza tabela
+        } else {
+            alert("Erro ao remover planta.");
+        }
+    })
+    .catch(() => alert("Erro de comunicação com o servidor."));
+}
