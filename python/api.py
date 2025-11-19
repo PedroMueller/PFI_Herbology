@@ -59,11 +59,10 @@ def buscar_planta():
         return jsonify({"status": "ok", "data": resultados}), 200
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
-
-#!---------------------------------------------------------------------------------------------
-"""
-@app.route('/plantas/<int:planta_id>', methods=['GET'])
+    
+@app.route('/planta/<int:planta_id>', methods=['GET'])
 def get_planta(planta_id):
+    print("entrou na função get_planta id",planta_id)
     try:
         planta = ctrl.get_planta(planta_id)
         if planta:
@@ -71,6 +70,10 @@ def get_planta(planta_id):
         return jsonify({"status": "not_found", "message": "Planta não encontrada"}), 404
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
+
+#!---------------------------------------------------------------------------------------------
+"""
+
 
 
 @app.route('/plantas/<int:planta_id>/completa', methods=['GET'])
@@ -122,11 +125,7 @@ def update_planta(planta_id):
             "descricao": data.get("descricao"),
             "imagem_url": data.get("imagem_url")
         }
-
-
         ctrl.update_planta(planta_id, campos)
-        print("Campos para edição das plantas",campos, planta_id)
-
         return jsonify({"status": "success", "message": "Planta atualizada com sucesso!"})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500

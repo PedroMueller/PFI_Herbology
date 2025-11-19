@@ -22,8 +22,6 @@ function carregarPlantas() {
 
         // Limpa tabela já existentes (se necessário)
         targetTabela.empty();
-        $("#targetTabela").append("<span>New content at the end</span>");
-
         console.log("Carregando plantas na tabela administrativa", items);
 
         // Para cada planta recebida
@@ -135,24 +133,29 @@ function AdicionarPlanta() {
     });
 }
 function EditarPlanta(id) {
+    console.log("Iniciando edição da planta ID:", id);
 
     if (!confirm(`Deseja editar a planta de ID ${id}?`)) {
         return;
     }
 
     // Primeiro, buscar dados atuais
-    fetch(`http://127.0.0.1:5000/plantas/adm/update/${id}`)
+    fetch(`http://127.0.0.1:5000/planta/${id}`, {
+        method:"GET",
+        headers: { "Content-Type": "application/json" },
+        })
         .then(r => r.json())
         .then(planta => {
 
             $("#form-dinamico").remove();
+            console.log("Dados atuais da planta:", planta);
 
             var form =
                 `<div id="form-dinamico" class="form-popup">
                     <h3>Editar Planta (ID ${id})</h3>
 
                     <label>Nome Popular:</label>
-                    <input type="text" id="edit_nome_popular" value="${planta.nome_popular}">
+                    <input type="text" id="edit_nome_popular" value="${planta.data.nome_popular}">
 
                     <label>Nome Científico:</label>
                     <input type="text" id="edit_nome_cientifico" value="${planta.nome_cientifico}">
@@ -177,6 +180,9 @@ function EditarPlanta(id) {
                     descricao: $("#edit_descricao").val(),
                     imagem_url: $("#edit_imagem_url").val()
                 };
+                console.log("Dados editados a serem enviados:", dadosEdit);
+
+                // Envio ao backend
 
                 fetch(`http://127.0.0.1:5000/plantas/adm/update/${id}`, {
                     method: "PUT",

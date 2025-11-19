@@ -7,9 +7,13 @@ db = HerbologyDB(user="root", password="ifprquedas", database="herbology")
 # PLANTAS
 # =============================
 def get_plantas():
-    """Retorna uma planta pelo ID."""
     print(db.get_plantas())
     return db.get_plantas()
+
+
+def get_planta(planta_id: int):
+    """Obtém informações básicas de uma planta pelo ID."""
+    return db.get_planta(planta_id)
 
 
 
