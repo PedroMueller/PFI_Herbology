@@ -28,41 +28,40 @@ def buscar_planta(termo: str):
         
     return db.list_plantas(termo)
 
-
-
-
-"""
 # =============================
-# CATEGORIAS
+# ADMIN - CRUD PLANTAS
 # =============================
-def get_categorias():
-    "Lista todas as categorias cadastradas."
-    return db.list_categorias()
+
+def add_planta(nome_popular: str, nome_cientifico: str, descricao: str, imagem_url: str):
+    """
+    Adiciona uma nova planta no banco.
+    """
+    return db.add_planta(nome_popular, nome_cientifico, descricao, imagem_url)
 
 
-# =============================
-# LOCAIS
-# =============================
-def get_locais():
-    "Lista todos os locais cadastrados."
-    return db._fetchall("SELECT * FROM locais ORDER BY regiao, bioma")
+def update_planta(planta_id: int, campos: dict):
+    """
+    Atualiza parcialmente os dados de uma planta.
+    Campos deve ser um dict com:
+    {
+        "nome_popular": "...",
+        "nome_cientifico": "...",
+        "descricao": "...",
+        "imagem_url": "..."
+    }
+    """
+    # Remove campos None (não enviados)
+    campos_limpos = {k: v for k, v in campos.items() if v is not None}
+
+    if not campos_limpos:
+        raise ValueError("Nenhum campo para atualizar.")
+
+    return db.update_planta(planta_id, campos_limpos)
 
 
-# =============================
-# REFERÊNCIAS
-# =============================
-def get_referencias():
-    "Lista todas as referências cadastradas."
-    return db._fetchall("SELECT * FROM referencias ORDER BY nome")
+def delete_planta(planta_id: int):
+    """
+    Remove uma planta pelo ID.
+    """
+    return db.delete_planta(planta_id)
 
-
-# =============================
-# PREPAROS
-# =============================
-def get_preparos():
-    "Lista todos os tipos de preparo cadastrados."
-    return db._fetchall("SELECT * FROM preparos")
-
-
-
-"""

@@ -86,20 +86,14 @@ def get_planta_completa(planta_id):
 #!---------------------------------------------------------------------------------------------
 
 
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-
-
 # =============================
 # ADMIN
 # =============================
+
+#adicionar prints para debugar
 @app.route('/plantas/adm/add', methods=['POST'])
 def add_planta():
+
     try:
         data = request.json
 
@@ -109,11 +103,11 @@ def add_planta():
         imagem_url = data.get("imagem_url")
 
         ctrl.add_planta(nome_popular, nome_cientifico, descricao, imagem_url)
+        print("Dados recebidos para adicionar planta:", data)
 
         return jsonify({"status": "success", "message": "Planta adicionada com sucesso!"}), 201
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
-
 
 
 @app.route('/plantas/adm/update/<int:planta_id>', methods=['PUT'])
@@ -129,8 +123,9 @@ def update_planta(planta_id):
             "imagem_url": data.get("imagem_url")
         }
 
+
         ctrl.update_planta(planta_id, campos)
-        print(campos, planta_id)
+        print("Campos para edição das plantas",campos, planta_id)
 
         return jsonify({"status": "success", "message": "Planta atualizada com sucesso!"})
     except Exception as e:
@@ -145,3 +140,8 @@ def delete_planta(planta_id):
         return jsonify({"status": "success", "message": "Planta removida!"})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
+    
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
