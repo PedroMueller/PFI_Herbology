@@ -1,8 +1,3 @@
-/* ==========================
-   PAINEL ADMINISTRATIVO
-   Estilo inspirado no Herbology
-   ========================== */
-
 /* Área de acesso restrito */
 #acesso {
   max-width: 450px;
@@ -42,9 +37,9 @@
   background-color: #244224;
 }
 
-/* ==========================
+/* 
    CONTAINER PRINCIPAL ADM
-   ========================== */
+*/
 #painel {
   padding: 20px;
   max-width: 1200px;
@@ -63,9 +58,9 @@
   color: #444;
 }
 
-/* ==========================
+/*
    ÁREA ADMINISTRATIVA
-   ========================== */
+*/
 .admin-container {
   background-color: #f2f5ef;
   padding: 20px;
@@ -95,10 +90,14 @@
   background-color: #244224;
 }
 
-/* ==========================
+/*
    TABELA ADMINISTRATIVA
-   ========================== */
+*/
 .admin-table {
+
+  margin-left: auto;
+  margin-right: auto;
+
   
   width: 100%;
   border-collapse: collapse;
@@ -133,9 +132,7 @@
   border-radius: 8px;
 }
 
-/* ==========================
-   AÇÕES (botões)
-   ========================== */
+
 .actions {
   display: flex;
   gap: 8px;
@@ -171,40 +168,7 @@
   background-color: #d9534f;
 }
 
-/* ==========================
-   PAGINAÇÃO
-   ========================== */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 15px;
-}
 
-.pagination button {
-  background-color: #dbe7c9;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: #c4d3a4;
-}
-
-.pagination button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.page-number {
-  background-color: #2f4f2f;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 10px;
-}
 
 /* ==========================
    RESPONSIVIDADE

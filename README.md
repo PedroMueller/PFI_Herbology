@@ -8,7 +8,7 @@ Versão 1.0 • Desenvolvido por Pedro Henrique Roncatto Mueller – IFPR Campus
 ## 📌 Sobre o Projeto
 
 O **Herbology** é um website informacional desenvolvido para organizar e disponibilizar dados confiáveis sobre **plantas medicinais brasileiras**.
-O sistema utiliza tecnologias web modernas e integra um banco de dados próprio, alimentado manualmente e por web scraping controlado.
+O sistema utiliza tecnologias web modernas e integra um banco de dados próprio, alimentado manualmente 
 
 O objetivo principal é promover o uso consciente e educacional de plantas medicinais, oferecendo informações categorizadas, referências científicas e uma interface simples e intuitiva.
 
@@ -34,8 +34,6 @@ O objetivo principal é promover o uso consciente e educacional de plantas medic
 * MySQL
 
 **Outros:**
-
-* Web Scraping (BeautifulSoup + Requests)
 * Figma (protótipos)
 
 ---
@@ -50,8 +48,7 @@ Herbology/
 │   ├── database/
 │   │   └── herbology.sql
 │   └── scraping/
-│       └── coletor.py
-├── frontend/
+│      
 │   ├── css/
 │   ├── js/
 │   ├── imgs/
@@ -68,7 +65,7 @@ Herbology/
 ### 1. Clone o repositório
 
 ```bash
-git clone <URL do repositório>
+git clone https://github.com/PedroMueller/PFI_Herbology.git
 cd Herbology
 ```
 
@@ -148,19 +145,7 @@ Funções disponíveis:
 * Cadastrar plantas
 * Editar plantas
 * Remover plantas
-* Gerenciar categorias e complementos
 
----
-
-## 🧪 Web Scraping
-
-O módulo de scraping coleta dados de fontes confiáveis:
-
-* Limpeza e padronização automática
-* Prevenção de duplicidade
-* Inserção no banco de dados
-
----
 
 ## ❗ Solução de Problemas
 
@@ -190,16 +175,11 @@ Contato: [pedromuellerifpr@gmail.com](mailto:pedromuellerifpr@gmail.com)
 
 ---
 
-Se quiser, posso gerar também:
-✅ Versão curta do README
-✅ Badges (Python, Flask, MySQL, Status, Licença)
-✅ GIF de demonstração do site
-✅ Roadmap de futuras versões
 
 
 
 
 
 # PFI_Herbology
-trabalho academico para conclusão de curso 
-Link para acesso https://docs.google.com/document/d/1tB2rK7kYM2dZdBbX1WlCrDJ1694XJciWxAS6_52EsKc/edit?usp=sharing
+Esse Projeto consiste em um Projeto Final Interdisciplinar do IFPR 
+Link para acesso do ducumento https://docs.google.com/document/d/1tB2rK7kYM2dZdBbX1WlCrDJ1694XJciWxAS6_52EsKc/edit?usp=sharing

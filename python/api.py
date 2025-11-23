@@ -89,9 +89,8 @@ def get_planta_completa(planta_id):
 #!---------------------------------------------------------------------------------------------
 
 
-# =============================
 # ADMIN
-# =============================
+
 
 #adicionar prints para debugar
 @app.route('/plantas/adm/add', methods=['POST'])
