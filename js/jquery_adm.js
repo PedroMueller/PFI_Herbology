@@ -110,7 +110,6 @@ function AdicionarPlanta() {
             descricao: $("#add_descricao").val(),
             imagem_url: $("#add_imagem_url").val()
         };
-        print("Dados a serem enviados:", dados);
 
         // Envio ao backend
         fetch("http://127.0.0.1:5000/plantas/adm/add", {
@@ -121,7 +120,7 @@ function AdicionarPlanta() {
         .then(r => r.json())
         .then(resp => {
             if (resp.status === "success") {
-                print()
+                
                 alert("Planta adicionada com sucesso!");
                 $("#form-dinamico").remove();
                 carregarPlantas();

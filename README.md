@@ -181,5 +181,5 @@ Contato: [pedromuellerifpr@gmail.com](mailto:pedromuellerifpr@gmail.com)
 
 
 # PFI_Herbology
-Esse Projeto consiste em um Projeto Final Interdisciplinar do IFPR 
+Esse Projeto consiste em um Projeto Final Interdisciplinar do IFPR para finalização de curso 
 Link para acesso do ducumento https://docs.google.com/document/d/1tB2rK7kYM2dZdBbX1WlCrDJ1694XJciWxAS6_52EsKc/edit?usp=sharing
