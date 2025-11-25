@@ -93,11 +93,11 @@ pip install -r requirements.txt
 
 1. Crie o banco:
 
-```sql
+```
 CREATE DATABASE herbology;
 ```
 
-2. Importe `herbology.sql`
+2. Importe o arquivo `https://drive.google.com/drive/folders/1sF6c9bBu48WX0x8sipNRhxWHFD0hVvlM?usp=sharing` e realize a importação da base de dados
 3. Ajuste as credenciais no arquivo `MySQLCRUD.py`:
 
 ```python
