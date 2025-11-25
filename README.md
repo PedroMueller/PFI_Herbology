@@ -157,7 +157,7 @@ Funções disponíveis:
 ## 📄 Licença
 
 Projeto de caráter educacional desenvolvido no IFPR.
-Licença recomendada: **MIT License** (pode ser alterada conforme necessidade).
+Licença: **MIT License** .
 
 ---
 
