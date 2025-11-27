@@ -157,13 +157,13 @@ function EditarPlanta(id) {
                     <input type="text" id="edit_nome_popular" value="${planta.data.nome_popular}">
 
                     <label>Nome Científico:</label>
-                    <input type="text" id="edit_nome_cientifico" value="${planta.nome_cientifico}">
+                    <input type="text" id="edit_nome_cientifico" value="${planta.data.nome_cientifico}">
 
                     <label>Descrição:</label>
-                    <textarea id="edit_descricao">${planta.descricao}</textarea>
+                    <textarea id="edit_descricao">${planta.data.descricao}</textarea>
 
                     <label>URL da Imagem:</label>
-                    <input type="text" id="edit_imagem_url" value="${planta.imagem_url}">
+                    <input type="text" id="edit_imagem_url" value="${planta.data.imagem_url}">
 
                     <button id="btnSalvarEdit">Salvar alterações</button>
                 </div>`;

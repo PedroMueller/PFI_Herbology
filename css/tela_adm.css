@@ -168,6 +168,68 @@
   background-color: #d9534f;
 }
 
+/* ==========================
+   FORMULÁRIOS DINÂMICOS SEM ALTERAR HTML
+   ========================== */
+
+#form-dinamico,
+.form-popup {
+  background-color: #f2f5ef;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form-dinamico h3 {
+  color: #2f4f2f;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+#form-dinamico label {
+  display: block;
+  margin-bottom: 6px;
+  color: #2f4f2f;
+  font-weight: 600;
+}
+
+#form-dinamico input,
+#form-dinamico textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #b4c6a5;
+  font-size: 1rem;
+  background-color: white;
+}
+
+#form-dinamico textarea {
+  height: 120px;
+  resize: none;
+}
+
+#form-dinamico button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2f4f2f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+#form-dinamico button:hover {
+  background-color: #244224;
+}
 
 
 /* ==========================
