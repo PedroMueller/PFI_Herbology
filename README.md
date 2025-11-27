@@ -41,20 +41,14 @@ O objetivo principal é promover o uso consciente e educacional de plantas medic
 ## 📂 Estrutura do Projeto
 
 ```
-Herbology/
-├── backend/
-│   ├── app.py
-│   ├── MySQLCRUD.py
-│   ├── database/
-│   │   └── herbology.sql
-│   └── scraping/
-│      
-│   ├── css/
-│   ├── js/
-│   ├── imgs/
-│   ├── index.html
-│   ├── buscar.html
-│   └── planta.html
+PFI_Herbology/
+├── css/               # Estilos gerais do site
+├── html/              # Páginas HTML (início, busca, planta, termos, admin, etc.)
+├── imgs/              # Imagens complementares
+├── js/                # Scripts JavaScript e jquery (busca, renderização, admin, alerts...)
+├── python/            # Scripts Python (API, coneção com o banco de dados, controller)
+├── svg/               # Ícones e elementos gráficos em SVG
+├── .gitignore
 └── README.md
 ```
 
@@ -99,11 +93,11 @@ pip install -r requirements.txt
 
 1. Crie o banco:
 
-```sql
+```
 CREATE DATABASE herbology;
 ```
 
-2. Importe `herbology.sql`
+2. Importe o arquivo `https://drive.google.com/drive/folders/1sF6c9bBu48WX0x8sipNRhxWHFD0hVvlM?usp=sharing` e realize a importação da base de dados
 3. Ajuste as credenciais no arquivo `MySQLCRUD.py`:
 
 ```python
@@ -163,7 +157,7 @@ Funções disponíveis:
 ## 📄 Licença
 
 Projeto de caráter educacional desenvolvido no IFPR.
-Licença recomendada: **MIT License** (pode ser alterada conforme necessidade).
+Licença: **MIT License** .
 
 ---
 
@@ -174,10 +168,6 @@ IFPR – Campus Quedas do Iguaçu
 Contato: [pedromuellerifpr@gmail.com](mailto:pedromuellerifpr@gmail.com)
 
 ---
-
-
-
-
 
 
 # PFI_Herbology
