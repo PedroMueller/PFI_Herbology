@@ -54,7 +54,7 @@ def update_planta(planta_id: int, campos: dict):
         "imagem_url": "..."
     }
     """
-    # Remove campos None (não enviados)
+    #* Remove campos None (não enviados) Mantém apenas pares onde o valor não é None
     campos_limpos = {k: v for k, v in campos.items() if v is not None}
 
     if not campos_limpos:

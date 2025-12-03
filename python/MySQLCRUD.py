@@ -287,6 +287,7 @@ class HerbologyDB:
         """Atualiza atributos de uma planta (parcial)."""
         if not campos:
             return False
+        #* Monta dinamicamente as colunas para o comando SQL "nome_popular=%s, descricao=%s"
         cols = ", ".join(f"{k}=%s" for k in campos.keys())
         params = tuple(campos.values()) + (planta_id,)
         sql = f"UPDATE plantas SET {cols} WHERE id=%s"
